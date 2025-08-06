@@ -1,0 +1,98 @@
+bracelet.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bracelets</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   
+
+<div class="banner">
+  <h1 class="banner-title">Bracelets</h1>
+  <a href="cart.html" class="cart-link">Cart</a>
+
+  
+
+</div>
+
+  <div class="product-grid">
+    <div class="product-card">
+      <span class="badge">New</span>
+      <img src="images/bracelet1.jfif"alt="Starlit Rose Bracelet">
+      <h3 class="product-title">"Starlit Rose" Bracelet</h3>
+      <div class="rating">★★★★★</div>
+      <p class="price">RM129</p>
+     
+      <button onclick="addToCart('Starlit Rose Bracelet',129)">Add to Cart</button>
+    </div>
+    <div class="product-card">
+      <span class="badge">Trending</span>
+      <img src="images/bracelet2.jpg"alt="Blue Mirage Bracelet">
+      <h3 class="product-title">"Blue Mirage" Bracelet</h3>
+      <div class="rating">★★★★★</div>
+      <p class="price">RM99</p>
+      
+       <button onclick="addToCart('Blue Mirage Bracelet')">Add to Cart</button>
+    </div>
+     <div class="product-card">
+      <span class="badge">New</span>
+      <img src="images/bracelet3.jfif" alt="Pearl Wings Bracele">
+      <h3 class="product-title">"Pearl Wings" Bracelet</h3>
+      <div class="rating">★★★★★</div>
+      <p class="price">RM199</p>
+       <button onclick="addToCart('Pearl Wings Bracelet',199)">Add to Cart</button>
+    </div>
+     <div class="product-card">
+      <span class="badge">Best Seller</span>
+      <img src="images/bracelet4.jfif"alt="Abyss Bloom Bracelet">
+      <h3 class="product-title">"Abyss Bloom" Bracelet</h3>
+      <div class="rating">★★★★★</div>
+      <p class="price">RM179</p>
+       <button onclick="addToCart('Abyss Bloom Bracelet',179)">Add to Cart</button>
+    </div>
+     <div class="product-card">
+      <span class="badge">New</span>
+      <img src="images/bracelet5.jfif" alt="Celestial Charm Bracelet">
+      <h3 class="product-title">"Celestial Charm" Bracelet</h3>
+      <div class="rating">★★★★☆</div>
+      <p class="price">RM139</p>
+       <button onclick="addToCart('Celestial Charm Bracelet',139)">Add to Cart</button>
+    </div>
+     <div class="product-card">
+      <span class="badge">Best Seller</span>
+      <img src="images/bracelet6.jpg"alt= "Stella Rouge Bracelet">
+      <h3 class="product-title">"Stella Rouge" Bracelet</h3>
+      <div class="rating">★★★★☆</div>
+      <p class="price">RM119</p>
+      <button onclick="addToCart('Stella Rouge Bracelet',119)">Add to Cart</button>
+    </div>
+  </div>
+  <body>
+
+
+
+ 
+  <div id="alertBox" style="
+    display: none;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: rgb(241, 241, 206);
+    color: black;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    box-shadow: 0 0 10px rgba(0,0,0,0.25);
+    z-index: 9999;">
+  </div>
+
+</body>
+
+   <script src="script.js"></script>
+
+
+</body>
+</html>

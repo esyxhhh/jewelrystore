@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Your Cart</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 0;
+    }
+    .banner {
+      background-color: #ca6d6d;
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+    }
+    .banner-title {
+      margin: 0;
+    }
+    .container {
+      max-width: 700px;
+      margin: 30px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    table.cart-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+    }
+    table.cart-table th,
+    table.cart-table td {
+      border: 1px solid #ddd;
+      padding: 10px;
+      text-align: left;
+    }
+    table.cart-table th {
+      background-color: #f2f2f2;
+    }
+    button {
+      background-color: #d9534f;
+      color: white;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #c9302c;
+    }
+    input[type="text"], input[type="month"] {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 12px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+    .add-to-cart-btn {
+      background-color: #28a745;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .add-to-cart-btn:hover {
+      background-color: #218838;
+    }
+  </style>
+</head>
+<body>
+  <div class="banner">
+    <h1 class="banner-title">Your Cart</h1>
+  </div>
+
+  <div class="container">
+    <div id="cartItems"></div>
+
+    <form id="checkoutForm">
+  <h2>Checkout</h2>
+  <label>Name:</label>
+  <input type="text" id="name" required>
+
+  <label>Address:</label>
+  <input type="text" id="address" required>
+
+  <label>Card Number:</label>
+  <input type="text" id="cardNumber" required>
+
+  <label>Expiry Month:</label>
+  <input type="text" id="expiryMonth" placeholder="MM" maxlength="2" required>
+
+  <label>Expiry Year:</label>
+  <input type="text" id="expiryYear" placeholder="YYYY" maxlength="4" required>
+
+  <label>CVV:</label>
+  <input type="text" id="cvv" placeholder="3-digit" maxlength="3" required>
+
+  <button type="submit" class="add-to-cart-btn">Complete Purchase</button>
+</form>
+
+  </div>
+
+  <script>
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const cartDiv = document.getElementById("cartItems");
+
+    if (cart.length === 0) {
+      cartDiv.innerHTML = "<p>Your cart is empty.</p>";
+    } else {
+      let total = 0;
+      let list = `<table class="cart-table">
+                    <thead>
+                      <tr>
+                        <th>Item</th>
+                        <th>Price (RM)</th>
+                        <th>Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>`;
+
+      cart.forEach((item, index) => {
+        const itemName = item.name || "Unknown";
+        const itemPrice = item.price || 0;
+
+        total += itemPrice;
+
+        list += `<tr>
+                    <td>${itemName}</td>
+                    <td>RM ${itemPrice.toFixed(2)}</td>
+                    <td><button onclick="removeItem(${index})">Delete</button></td>
+                 </tr>`;
+      });
+
+      list += `</tbody>
+               <tfoot>
+                 <tr>
+                   <td><strong>Total</strong></td>
+                   <td colspan="2"><strong>RM ${total.toFixed(2)}</strong></td>
+                 </tr>
+               </tfoot>
+               </table>`;
+
+      cartDiv.innerHTML = list;
+    }
+
+    function removeItem(index) {
+      const cart = JSON.parse(localStorage.getItem("cart")) || [];
+      cart.splice(index, 1); // Remove item by index
+      localStorage.setItem("cart", JSON.stringify(cart));
+      window.location.reload(); // Reload the page
+    }
+
+document.getElementById("checkoutForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  const expiryMonth = document.getElementById("expiryMonth").value;
+  const expiryYear = document.getElementById("expiryYear").value;
+  const expiry = expiryMonth + "/" + expiryYear;
+
+  const purchaseData = {
+    name: document.getElementById("name").value,
+    address: document.getElementById("address").value,
+    card: document.getElementById("cardNumber").value,
+    expiry: expiry,
+    cvv: document.getElementById("cvv").value, 
+    items: cart
+  };
+
+  let allPurchases = JSON.parse(localStorage.getItem("purchases")) || [];
+  allPurchases.push(purchaseData);
+  localStorage.setItem("purchases", JSON.stringify(allPurchases));
+
+  localStorage.removeItem("cart");
+
+  alert("Purchase complete!");
+  window.location.href = "thankyou.html";
+});
+  </script>
+</body>
+</html>
+
+

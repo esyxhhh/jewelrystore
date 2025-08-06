@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Necklaces</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   
+
+<div class="banner">
+  <h1 class="banner-title">Necklaces</h1>
+  <a href="cart.html" class="cart-link">Cart</a>
+ 
+  <a href="cart.html" class="cart-link">Cart</a>
+
+</div>
+
+  <div class="product-grid">
+    <div class="product-card">
+      <span class="badge">New</span>
+      <img src="images/necklace1.jfif"alt="Blue Lullaby Necklace">
+      <h3 class="product-title">"Blue Lullaby" Necklace</h3>
+      <div class="rating">★★★★☆</div>
+      <p class="price">RM129</p>
+       <button onclick="addToCart('Blue Lullaby Necklace',129)">Add to Cart</button>
+    </div>
+    <div class="product-card">
+      <span class="badge">Trending</span>
+      <img src="images/necklace2.jfif"alt="Blush Bow Necklace">
+      <h3 class="product-title">"Blush Bow" Necklace</h3>
+      <div class="rating">★★★★☆</div>
+      <p class="price">RM109</p>
+       <button onclick="addToCart('Blush Bow Necklace',109)">Add to Cart</button>
+    </div>
+     <div class="product-card">
+      <span class="badge">New</span>
+      <img src="images/necklace3.jfif"alt="Velvet Promise Necklace">
+      <h3 class="product-title">"Velvet Promise" Necklace</h3>
+      <div class="rating">★★★★★</div>
+      <p class="price">RM129</p>
+       <button onclick="addToCart('Velvet Promise Necklace',129)">Add to Cart</button>
+    </div>
+     <div class="product-card">
+      <span class="badge">Best Seller</span>
+      <img src="images/necklace4.jpg"alt="Pearl Loveee Necklace">
+      <h3 class="product-title">"Pearl Loveee" Necklace</h3>
+      <div class="rating">★★★★★</div>
+      <p class="price">RM125</p>
+       <button onclick="addToCart('Pearl Loveee Necklace',125)">Add to Cart</button>
+    </div>
+     <div class="product-card">
+      <span class="badge">New</span>
+      <img src="images/necklace5.jfif"alt="Twilight Star Necklace">
+      <h3 class="product-title">"Twilight Star" Necklace</h3>
+      <div class="rating">★★★★★</div>
+      <p class="price">RM149</p>
+      <button onclick="addToCart('Twilight Star Necklace',149)">Add to Cart</button>
+    </div>
+     <div class="product-card">
+      <span class="badge">Best Seller</span>
+      <img src="images/necklace6.jfif"alt="Ethereal Love Necklace">
+      <h3 class="product-title">"Ethereal Love" Necklace</h3>
+      <div class="rating">★★★★★</div>
+      <p class="price">RM199</p>
+      <button onclick="addToCart('Ethereal Love Necklace',199)">Add to Cart</button>
+    </div>
+  </div>
+
+  <div id="alertBox" style="
+  display: none;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: rgb(241, 241, 206);
+  color: black;
+  padding: 12px 20px;
+  border-radius:8px;
+  font-weight: bold;
+  box-shadow: 0 0 10px rgba(0,0,0,0.25);
+  z-index: 9999;">
+  <script src="script.js"></script>
+</div>
+
+</body>
+</html>

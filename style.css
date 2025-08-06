@@ -1,0 +1,158 @@
+
+body, html {
+  margin: 0;
+
+  font-family: sans-serif;
+  text-align: center;
+  height: 100vh;
+  overflow: hidden;
+}
+.welcome-page {
+  background-image: url("./images/welcome.png.jfif");
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.overlay  {
+  font-family: 'Great Vibes', cursive;
+  font-size: 60px;
+  color: rgb(15, 15, 13);
+  background-color: rgba(255,255,255,0.7);
+  padding: 50px;
+  border-radius: 10px;
+}
+
+
+
+.shop-button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: rgb(182, 177, 147);
+  color: black;
+  text-decoration: none;
+  font-size: 20px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 20px;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+
+
+.category-grid, .product-grid {
+ min-height: 100vh;
+  overflow-y: auto;
+  background-image: url("./images/bgpic2.jfif");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+   background-attachment: fixed;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+
+.category-grid, .product-grid {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin: 0 auto;
+}
+    
+
+
+
+.category-grid a, .product-card {
+  text-decoration: none;
+  color: #333;
+  background-color: rgba(163, 118, 126, 0.8);  
+  border: 1px solid #2b2828;
+  padding: 10px;
+  border-radius: 10px;
+  width: 200px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+  transition: all 0.3s ease;
+}
+
+
+.category-grid a:hover {
+  transform: scale(1.05);
+}
+
+
+.category-grid img, .product-card img {
+     
+  width: 100%;
+  border-radius: 10px;
+}
+
+.banner {
+  background:  	#a9747a;
+
+  
+  text-align: center;
+  position: relative;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+ padding:30px
+  
+}
+
+.banner-title {
+  font-family: 'Great Vibes', cursive;
+  font-size: 50px;
+  color: #4b2e2e;
+  margin: 0;
+}
+
+
+
+.admin-link {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+  text-decoration: none;
+  color: #472b2b;
+  background-color: #f3d9b5;
+  padding: 4px 10px;      
+  font-size: 12px;           
+  border-radius: 5px;        
+}
+
+.cart-link {
+  position: absolute;
+  top: 20px;
+  left: 30px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+  text-decoration: none;
+  color: #964949;
+  background-color: #f3d9b5;
+  padding: 8px 15px;
+  border-radius: 8px;
+  z-index: 1000;
+}
+
+
+
+ 
